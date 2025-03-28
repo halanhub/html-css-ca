@@ -1,0 +1,91 @@
+a{
+    text-decoration: none;
+    color: #0f3d3e;
+    
+}
+a.active{
+    color: #e0a800;
+}
+
+h1, h2, h3{
+    font-family: 'montserrat',sans-serif;
+    color: #0f3d3e;
+}
+h1{
+    font-size: 42px;
+}
+h2{
+    font-size: 32px;
+}
+h3{
+    font-size: 24px;
+}
+p{
+    font-family: 'open-sans',sans-serif;
+    color: #0f3d3e;
+    font-size: 18px;
+}
+li{
+    font-family: 'open-sans',sans-serif;
+    color: #0f3d3e;
+}
+label{
+    font-family: "open-sans",sans-serif
+}
+
+/* FIRST PAGE BUTTON */
+.shopnow-button{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e0a800;
+    background-color: #F2F2F2;
+    color: #0F3D3E;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.shopnow-button:hover{
+    background-color: #e0a800;
+    color: white;
+}
+.price{
+    font-size: 18px;
+}
+
+
+/* Products details */
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    cursor: pointer;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.button input {
+    display: none; 
+}
+
+.quantity {
+    font-size: 20px;
+    color: #0F3D3E;
+    width: 30px;
+    text-align: center;
+}
+
+.button span {
+    padding: 10px;
+    border: 1px solid #0F3D3E;
+    border-radius: 100%;
+    background-color: #f2f2f2;
+}
+
+.button input:checked + span {
+    background-color: #dddddd;
+}
