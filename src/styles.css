@@ -4,6 +4,8 @@ body {
     margin: 0 auto;
     height: auto;
     font-size: 16px;
+    overflow-x: hidden;
+    
 }
 
 header {
@@ -14,49 +16,7 @@ header {
     padding: 10px 20px;
 }
 
-/* BURGER MENU */
-/* Hide the burger menu elements by default */
-.burger-toggle {
-    display: none;
-  }
-  .burger-menu {
-    display: none;
-  }
-  .burger-dropdown {
-    display: none;
-    position: absolute;
-    right: 20px;
-    top: 60px; /* Adjust based on your header height */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    width: 150px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 100;
-  }
-  
-  .burger-dropdown ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .burger-dropdown li {
-    border-bottom: 1px solid #eee;
-  }
-  
-  .burger-dropdown li a,
-  .burger-dropdown li select {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  /* Remove border on the last list item */
-  .burger-dropdown li:last-child {
-    border-bottom: none;
-  }
-  
+
 
 
 
@@ -1274,6 +1234,21 @@ input, textarea{
     align-items: center;
     text-align: center;
     width: 100%;
+  }
+  .cart-container, .summary-container{
+    max-width: 100%;
+    padding: 15px;
+    margin: 0 20px;
+  }
+  .summary-container{
+    margin-top: 20px;
+    margin-right: 0;
+  }
+  .cart-button{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
   .cart-image {
     max-width: 100%;
