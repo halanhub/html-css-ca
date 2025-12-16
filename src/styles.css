@@ -1,11 +1,21 @@
 @import url("variables.css");
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     background-color: #F2F2F2;
     margin: 0 auto;
     height: auto;
     font-size: 16px;
     overflow-x: hidden;
-    
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 header {
@@ -31,6 +41,110 @@ header {
     margin-left: 100px;
     width: 150px;
     height: auto;
+}
+
+/* HAMBURGER MENU */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0F3D3E;
+    font-size: 32px;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-menu .material-symbols-outlined {
+    font-size: 32px;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background-color: #F2F2F2;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 80px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.mobile-nav-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #acacac;
+}
+
+.mobile-nav-list li.mobile-sign-in {
+    padding: 15px 0;
+}
+
+.mobile-nav-list li.mobile-sign-in a {
+    color: white !important;
+}
+
+.mobile-nav-list a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #0F3D3E;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-nav-list a:hover {
+    color: #e0a800;
+}
+
+.mobile-sign-in-btn {
+    padding: 8px 16px;
+    background-color: #0F3D3E;
+    color: white !important;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mobile-sign-in-btn:hover {
+    background-color: #e0a800;
+    color: white;
+}
+
+.mobile-cart-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.mobile-cart-link .material-symbols-outlined {
+    font-size: 24px;
 }
 
 /* NAV-BAR */
@@ -202,10 +316,12 @@ input{
 .hero-container{
     position: relative;
     width: 100%;
+    max-width: 100%;
     overflow: hidden;
 }
 .hero-image{
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
 }
@@ -252,10 +368,17 @@ input{
 }
 
 /* PRODUCTS AND SIGN UP, FIRST PAGE  */
+main {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .main-container{
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .article-product{
@@ -1124,34 +1247,38 @@ input, textarea{
 /* For screens up to 768px */
 @media screen and (max-width: 768px) {
   header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   .logo {
-    order: 1;
-    text-align: center;
-    margin: 0 auto;
+    order: 0;
+    text-align: left;
+    margin: 0;
+    margin-left: 10px;
+    max-width: calc(100% - 60px);
+  }
+  .hamburger-menu {
+    display: block;
+    order: 2;
+    margin-right: 10px;
+    flex-shrink: 0;
   }
   .nav-bar {
-    margin-top: 10px;
-  }
-  .nav-list {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .top-right-container {
-    position: static;
-    margin: 10px 0;
-    justify-content: center;
+    display: none;
   }
   .search-container {
-    margin-top: 10px;
-    margin-right: 10px;
-    justify-content: center;
+    display: none;
   }
-  .sign-in-container {
-    margin-left: 0;
-    margin-top: 10px;
+  .top-right-container {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
   }
   .login-container {
     width: 90%;
@@ -1299,29 +1426,38 @@ input, textarea{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
+    height: auto;
   }
 }
 
 /* For screens up to 576px */
 @media screen and (max-width: 576px) {
-  .logo {
-    margin-left: 0;
-  }
-  .nav-list {
-    flex-direction: column;
-    gap: 5px;
-  }
-  .nav-bar a {
-    font-size: 16px;
-  }
-  .search-input {
-    font-size: 14px;
+  header {
     padding: 8px;
   }
-  .sign-in-btn {
-    padding: 8px 16px;
+  .logo {
+    margin-left: 5px;
+    width: 100px;
+    max-width: calc(100% - 50px);
+  }
+  .hamburger-menu {
+    margin-right: 5px;
+  }
+  .hamburger-menu .material-symbols-outlined {
+    font-size: 28px;
+  }
+  .mobile-nav-list {
+    padding: 15px;
+    max-width: 100%;
+  }
+  .mobile-nav-list a {
+    font-size: 18px;
+    word-wrap: break-word;
+  }
+  .mobile-sign-in-btn {
+    padding: 8px 14px;
     font-size: 14px;
-    white-space: nowrap;
   }
   .cart-h1 {
     margin: 0 10px;
